@@ -1,0 +1,39 @@
+<html lang ="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>hello Vue.js</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head> 
+    <body>
+        <div id="app">
+            <h2>
+            v-clock
+            </h2>
+            <p v-cloak>
+                {{message}}
+            </p>
+
+            <p> <!--- そのまま表示される -->
+                {{ message2 }}
+            </p>
+            <p v-html="message2"></p> <!-- htmlが出力される -->
+            <br>
+            
+            <p v-pre> <!--- そのまま表示される -->
+                {{ message }}
+            </p>
+            <br>
+
+            <p v-once> <!--- v-once　を入れると一度しか評価されない -->
+            {{ message }}
+            </p>
+            <br>
+            {{ message }}
+            <button v-on:click="clickHandler">
+                Click!
+            </button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

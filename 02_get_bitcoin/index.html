@@ -7,11 +7,21 @@
     <body>
         <div id = "app">
             <h2>Bitcoin Price</h2>
-            <ul>
-                <li v-for="(rate, currency) in bpi">
-                    {{ currency}} : {{ rate.rate_float | currencyDecimal}}
-                </li>
-            </ul>
+            <section v-if="hasError">
+                Error.
+            </section>
+            <section v-else>
+                <div v-if="loading">
+                    Loading・・・
+                </div v-else >
+                <div>
+                    <ul v-cloak>
+                        <li v-for="(rate, currency) in bpi">
+                            {{ currency}} : {{ rate.rate_float | currencyDecimal}}
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
             <pre>{{ $data}}</pre>  
 

@@ -42,6 +42,28 @@
             <button v-on:click="clickHandler">
                 Click!
             </button>
+
+            <p>{{ message4 }}</p>
+            <p>{{ number+1 }}</p>
+
+            <p>
+                {{ message.split('').reverse().join('')}}
+            </p>
+
+            <p>
+                {{ ok? 'YES': 'NO'}}
+            </p>
+
+            <h2>
+                Mustache
+            </h2>
+            <p> {{ price|numberFormat }}</p>
+
+            <h2>
+                v-bind
+            </h2>
+            <input type="text" v-bind:value="price | numberFormat">
+
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
         <script src="js/main.js"></script>
